@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.NavigationApp" parent="Base.Theme.NavigationApp" />
+
+    <style name="CircularImageViewShape" parent="">
+        <item name="cornerSize">40dp</item>
+    </style>
 </resources>

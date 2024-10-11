@@ -4,4 +4,8 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="CircularImageViewShape" parent="">
+        <item name="cornerSize">40dp</item>
+    </style>
 </resources>

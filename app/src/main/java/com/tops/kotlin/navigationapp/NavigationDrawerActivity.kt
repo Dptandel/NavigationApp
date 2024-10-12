@@ -15,64 +15,21 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNavigationDrawerBinding
 
-    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNavigationDrawerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.navigationView.setNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.home -> {
-                    Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
+        // add toggle button to drawer
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, binding.appBarLayout.toolbar, R.string.open, R.string.close)
 
-                R.id.message -> {
-                    Toast.makeText(this, "Message Clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
+        toggle.drawerArrowDrawable.color = resources.getColor(R.color.white)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
 
-                R.id.sync -> {
-                    Toast.makeText(this, "Sync Clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-
-                R.id.trash -> {
-                    Toast.makeText(this, "Trash Clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-
-                R.id.settings -> {
-                    Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-
-                R.id.login -> {
-                    Toast.makeText(this, "Login Clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-
-                R.id.share -> {
-                    Toast.makeText(this, "Share Clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-
-                R.id.rate_us -> {
-                    Toast.makeText(this, "Rate Us Clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-
-                else -> false
-            }
-        }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true
-        }
-        return super.onOptionsItemSelected(item)
+        // show menu icon and back icon while drawer open
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

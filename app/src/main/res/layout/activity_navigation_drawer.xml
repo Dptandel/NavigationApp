@@ -13,10 +13,12 @@
         android:layout_height="match_parent">
 
         <include
+            android:id="@+id/appBarLayout"
             layout="@layout/app_bar_layout"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <include
+            android:id="@+id/mainContent"
             layout="@layout/content_main_layout"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 

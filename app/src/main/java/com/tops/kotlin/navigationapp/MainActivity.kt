@@ -5,6 +5,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.tops.kotlin.navigationapp.databinding.ActivityMainBinding
+import com.tops.kotlin.navigationapp.fragments.HomeFragment
+import com.tops.kotlin.navigationapp.fragments.ProfileFragment
+import com.tops.kotlin.navigationapp.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 

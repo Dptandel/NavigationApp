@@ -7,21 +7,41 @@
     android:layout_height="match_parent"
     tools:context=".NavigationDrawerActivity">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <!--tools:openDrawer="start"-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
+        <!--<include
             android:id="@+id/appBarLayout"
-            layout="@layout/app_bar_layout"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            layout="@layout/app_bar_layout" />
 
         <include
             android:id="@+id/mainContent"
-            layout="@layout/content_main_layout"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            layout="@layout/content_main_layout" />-->
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_menu"
+            app:title="@string/app_name" />
+
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <com.google.android.material.navigation.NavigationView

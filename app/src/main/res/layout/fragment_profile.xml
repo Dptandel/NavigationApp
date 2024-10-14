@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:text="Profile"
         android:textSize="24sp"
-        android:textStyle="bold"
         android:layout_centerInParent="true" />
 
 </RelativeLayout>
